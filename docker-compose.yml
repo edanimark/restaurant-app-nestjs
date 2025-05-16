@@ -13,6 +13,23 @@ services:
     networks:
       - backend
 
+  app:
+    container_name: restaurant_app
+    build: .
+    ports:
+      - '3000:3000'
+    depends_on:
+      - restaurant-db
+    environment:
+      JWT_SECRET: ${JWT_SECRET}
+      DB_HOST: restaurant-db
+      DB_PORT: 5432
+      DB_USERNAME: ${DB_USERNAME}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_NAME: ${DB_NAME}
+    networks:
+      - backend
+
 volumes:
   pgdata:
 
