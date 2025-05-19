@@ -18,7 +18,7 @@ To run the application locally or with Docker:
 
 ```bash
 git clone https://github.com/edanimark/restaurant-app-nestjs.git
-cd restaurant-app
+cd restaurant-app-nestjs
 cp .env.example .env
 ```
 
